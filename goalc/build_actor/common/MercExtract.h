@@ -13,7 +13,9 @@ void extract(const std::string& name,
              u32 index_offset,
              u32 vertex_offset,
              u32 tex_offset);
-void merc_convert(gltf_util::MercSwapData& out, const gltf_util::MercExtractData& in);
+void merc_convert(gltf_util::MercSwapData& out,
+                  const gltf_util::MercExtractData& in,
+                  int joint_idx = -1);
 gltf_util::MercSwapData load_merc_model(u32 current_idx_count,
                                         u32 current_vtx_count,
                                         u32 current_tex_count,
