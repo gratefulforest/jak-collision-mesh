@@ -20,7 +20,8 @@ gltf_util::MercSwapData load_merc_model(u32 current_idx_count,
                                         u32 current_vtx_count,
                                         u32 current_tex_count,
                                         const std::string& path,
-                                        const std::string& name);
+                                        const std::string& name,
+                                        int joint_idx = -1);
 
 std::vector<jak1::CollideMesh> gen_collide_mesh_from_model_jak1(
     const tinygltf::Model& model,
