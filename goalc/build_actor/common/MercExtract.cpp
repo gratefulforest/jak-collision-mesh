@@ -150,9 +150,9 @@ void merc_convert(gltf_util::MercSwapData& out, const gltf_util::MercExtractData
     x.rgba[1] = in.new_colors[i][1];
     x.rgba[2] = in.new_colors[i][2];
     x.rgba[3] = in.new_colors[i][3];
-    x.mats[0] = in.joints_and_weights.at(i).joints[0];
-    x.mats[1] = in.joints_and_weights.at(i).joints[1];
-    x.mats[2] = in.joints_and_weights.at(i).joints[2];
+    x.mats[0] = in.joints_and_weights.at(i).joints[0] + 3;
+    x.mats[1] = in.joints_and_weights.at(i).joints[1] + 3;
+    x.mats[2] = in.joints_and_weights.at(i).joints[2] + 3;
   }
 }
 
