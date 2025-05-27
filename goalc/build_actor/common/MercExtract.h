@@ -13,15 +13,12 @@ void extract(const std::string& name,
              u32 index_offset,
              u32 vertex_offset,
              u32 tex_offset);
-void merc_convert(gltf_util::MercSwapData& out,
-                  const gltf_util::MercExtractData& in,
-                  int joint_idx = -1);
+void merc_convert(gltf_util::MercSwapData& out, const gltf_util::MercExtractData& in);
 gltf_util::MercSwapData load_merc_model(u32 current_idx_count,
                                         u32 current_vtx_count,
                                         u32 current_tex_count,
                                         const std::string& path,
-                                        const std::string& name,
-                                        int joint_idx = -1);
+                                        const std::string& name);
 
 std::vector<jak1::CollideMesh> gen_collide_mesh_from_model_jak1(
     const tinygltf::Model& model,

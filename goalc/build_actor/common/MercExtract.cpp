@@ -125,9 +125,7 @@ void extract(const std::string& name,
            out.new_vertices.size());
 }
 
-void merc_convert(gltf_util::MercSwapData& out,
-                  const gltf_util::MercExtractData& in,
-                  int joint_idx)) {
+void merc_convert(gltf_util::MercSwapData& out, const gltf_util::MercExtractData& in) {
   // easy
   out.new_model = in.new_model;
   out.new_indices = in.new_indices;
@@ -152,16 +150,9 @@ void merc_convert(gltf_util::MercSwapData& out,
     x.rgba[1] = in.new_colors[i][1];
     x.rgba[2] = in.new_colors[i][2];
     x.rgba[3] = in.new_colors[i][3];
-    if (joint_idx >= 0) {
-      x.mats[0] = joint_idx;
-      x.mats[1] = joint_idx;
-      x.mats[2] = joint_idx;
-    } else {
-      x.mats[0] = in.joints_and_weights.at(i).joints[0];
-      x.mats[1] = in.joints_and_weights.at(i).joints[1];
-      x.mats[2] = in.joints_and_weights.at(i).joints[2];
-    }
-
+    x.mats[0] = in.joints_and_weights.at(i).joints[0];
+    x.mats[1] = in.joints_and_weights.at(i).joints[1];
+    x.mats[2] = in.joints_and_weights.at(i).joints[2];
   }
 }
 
