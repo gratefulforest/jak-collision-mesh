@@ -468,7 +468,7 @@ void generate_merc_effects(DataObjectGenerator& gen, tfrag3::MercModel* mdl, int
   }
   for (auto& loc : locs) {
     gen.link_word_to_byte(loc.extra_info, gen_dummy_extra_info(gen));
-    gen.link_word_to_byte(loc.frag_ctrl, gen_dummy_frag_ctrl_for_uploads(gen, joints + 3));
+    gen.link_word_to_byte(loc.frag_ctrl, gen_dummy_frag_ctrl_for_uploads(gen, joints));
     gen.link_word_to_byte(loc.frag_geo, gen_dummy_frag_geo(gen));
   }
 }
