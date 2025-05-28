@@ -266,7 +266,7 @@ std::vector<jak1::CollideMesh> gen_collide_mesh_from_model_jak1(
                                               prims.at(p).mesh_name, vert_count));
     auto& cmesh = cmeshes.emplace_back();
     // TODO joint idx as a custom property in blender?
-    cmesh.joint_id = (model.skins.empty() ? joint_idx : joint_idx + 1);
+    cmesh.joint_id = joint_idx;
     cmesh.vertices.reserve(255);
     cmesh.vertices.insert(cmesh.vertices.begin(), verts.begin(), verts.end());
     cmesh.num_verts = cmesh.vertices.size();
