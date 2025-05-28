@@ -140,6 +140,7 @@ constexpr int kGltfToGameJointOffset = 1;
 std::vector<Joint> convert_joints(const std::vector<GltfJoint>& gjoints) {
   std::vector<Joint> joints;
   joints.emplace_back("align", 0, -1, math::Matrix4f::identity());
+  joints.emplace_back("prejoint", 1, -1, math::Matrix4f::identity());
   ASSERT(kGltfToGameJointOffset == joints.size());
   for (int gjoint_idx = 0; gjoint_idx < int(gjoints.size()); gjoint_idx++) {
     // using -1 as the parent index since gltf's shouldn't be child of align.
