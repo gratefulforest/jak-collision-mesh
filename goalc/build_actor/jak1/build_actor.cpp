@@ -608,10 +608,11 @@ bool run_build_actor(const std::string& mdl_name,
     joints.emplace_back(main);
   }
 
+  std::vector<CollideMesh> mesh;
   if (params.gen_collide_mesh) {
-      mesh = gen_collide_mesh_from_model_jak1(model, all_nodes, 3);
+    mesh = gen_collide_mesh_from_model_jak1(model, all_nodes, 3);
   }
-  
+
   std::shared_ptr<ArtJointGeo> jgeo = std::make_shared<ArtJointGeo>(ag.name, mesh, joints, params);
 
   ag.elts.emplace_back(jgeo);
