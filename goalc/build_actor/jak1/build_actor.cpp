@@ -609,13 +609,7 @@ bool run_build_actor(const std::string& mdl_name,
   }
 
   if (params.gen_collide_mesh) {
-    if (skin_idx) {
-      // When a skeleton exists, convert_joints only inserts one dummy ("align"),
-      // so visually we need to offset by one extra.
-      mesh = gen_collide_mesh_from_model_jak1(model, all_nodes, 4);
-    } else {
       mesh = gen_collide_mesh_from_model_jak1(model, all_nodes, 3);
-    }
   }
   
   std::shared_ptr<ArtJointGeo> jgeo = std::make_shared<ArtJointGeo>(ag.name, mesh, joints, params);
